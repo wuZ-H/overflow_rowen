@@ -3,7 +3,7 @@ var counter_rowen=0;
 function play_click(){
   create_div(box);
   set_size(box,"80vh","40vh");
-  set_posi(box,"10vh","50vw-20vh");
+  set_posi(box,"10vh","calc(50vw-20vh)");
   create_div(bar_top);
   set_size(bar_top,"10vh","100vw");
   set_posi(bar_top,"0","0");
