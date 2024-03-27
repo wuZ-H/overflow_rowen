@@ -24,7 +24,7 @@ function create_div(id){
   document.body.appendChild(id);
 }
 function set_size(i,h,w){
-  document.getElementById(i).style.height=h";
+  document.getElementById(i).style.height=h;
   document.getElementById(i).style.width=w;
 }
 function set_posi(i,t,l){
