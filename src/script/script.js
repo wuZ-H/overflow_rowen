@@ -1,7 +1,5 @@
 var counter_rowen=0;
 
-
-
 function play_click(){
   create_div(box);
   set_size(box,"80vh","40vh");
@@ -18,6 +16,12 @@ function create_rowen(){
   rowen.setAttribute("class","rowen");
   rowen.setAttribute("id","rowen"+counter_rowen);
   document.body.appendChild(rowen);
+}
+
+function delete_rowen(id){
+  var rowen=document.getElementById(id);
+  document.body.removeChild(rowen);
+  counter_rowen--;
 }
 
 function create_div(id){
