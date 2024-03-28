@@ -1,5 +1,7 @@
 var counter_rowen=0;
 
+
+
 function play_click(){
   create_div(box);
   set_size(box,"80vh","40vh");
@@ -13,15 +15,15 @@ function play_click(){
 function create_rowen(){
   counter_rowen++;
   var rowen=document.createElement("div");
-  cell.setAttribute("class","rowen");
-  cell.setAttribute("id","rowen"+counter_rowen);
+  rowen.setAttribute("class","rowen");
+  rowen.setAttribute("id","rowen"+counter_rowen);
   document.body.appendChild(rowen);
 }
 
 function create_div(id){
   var div=document.createElement("div");
-  cell.setAttribute("id",id);
-  document.body.appendChild(id);
+  div.setAttribute("id",id);
+  document.body.appendChild(div);
 }
 function set_size(i,h,w){
   document.getElementById(i).style.height=h;
