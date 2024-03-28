@@ -1,5 +1,8 @@
 var counter_rowen=0;
 
+var btn=document.getElementById("PLAY");
+btn.setAttribute("onclick","play_click");
+
 function play_click(){
   /*create_div(box);
   set_size(box,"80vh","40vh");
