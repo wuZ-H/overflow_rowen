@@ -1,0 +1,9 @@
+#bar_top{
+  z-index:1;
+  background-color:#000000;
+}
+
+div{
+  position: absolute;
+  background-color:#AAAAAA;
+}
