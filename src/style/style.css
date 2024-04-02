@@ -3,8 +3,23 @@
   background-color:#000000;
 }
 
-.rowen{
-  background-color:#666666;
+.red{
+  background-color:red;
+}
+.orange{
+  background-color:orange;
+}
+.yellow{
+  background-color:yellow;
+}
+.green{
+  background-color:green;
+}
+.blue{
+  background-color:blue;
+}
+.purple{
+  background-color:purple;
 }
 
 div{
