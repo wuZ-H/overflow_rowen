@@ -35,24 +35,21 @@ function play_click(){
   born_rowen();
 }
 
-function create_rowen(id,x,y){
-  counter_rowen++;
-
-  var rowen=document.createElement("div");
-  rowen.setAttribute("class","rowen "+array_color[Math.floor(Math.random() * 6)]);
-  rowen.setAttribute("id",id);
-  document.body.appendChild(rowen);
-
-  array_rowen[y][x]=id;
-
-  set_size(id,"8vh","6vh");
-  set_posi(id,"calc(82vh - 8vh * "+y+")","calc(50vw - 30vh + 6vh * " + x + ")");
-}
-
-function delete_rowen(id){
-  var rowen=document.getElementById("rowen"+id);
-  document.body.removeChild(rowen);
-  counter_rowen--;
+function born_rowen(){
+  clearTimeout(timer_born_rowen);
+  timer_born_rowen=null;
+  if(counter_rowen<100){
+    create_rowen("rowen"+counter_rowen,counter_rowen % 10,10);
+    drop_rowen();
+    timer_born_rowen=setTimeout(born_rowen,50);
+  }
+  else{
+    for(var j=0; j<10; j++){
+      for(var i=0; i<10; i++){
+        document.getElementById("rowen"+(i*10+j)).addEventListener("mousedown",mousedown_rowen("rowen"+(i*10+j)));
+      }
+    }
+  }
 }
 
 function drop_rowen(){
@@ -80,23 +77,6 @@ function drop_rowen(){
   }
 }
 
-function born_rowen(){
-  clearTimeout(timer_born_rowen);
-  timer_born_rowen=null;
-  if(counter_rowen<100){
-    create_rowen("rowen"+counter_rowen,counter_rowen % 10,10);
-    drop_rowen();
-    timer_born_rowen=setTimeout(born_rowen,50);
-  }
-  else{
-    for(var j=0; j<10; j++){
-      for(var i=0; i<10; i++){
-        document.getElementById("rowen"+(i*10+j)).addEventListener("mousedown",mousedown_rowen("rowen"+(i*10+j)));
-      }
-    }
-  }
-}
-
 function mousedown_rowen(id){
   var rowen=document.getElementById(id);
   var y=0;
@@ -108,10 +88,16 @@ function mousedown_rowen(id){
   try{
     rowen=document.getElementById(array_rowen[y-1][x]);
     rowen.addEventListener("mouseener",mouseenter_rowen(y-1,x,y,x));
+  }catch(e){}
+  try{
     rowen=document.getElementById(array_rowen[y+1][x]);
     rowen.addEventListener("mouseener",mouseenter_rowen(y+1,x,y,x));
+  }catch(e){}
+  try{
     rowen=document.getElementById(array_rowen[y][x-1]);
     rowen.addEventListener("mouseener",mouseenter_rowen(y,x-1,y,x));
+  }catch(e){}
+  try{
     rowen=document.getElementById(array_rowen[y][x+1]);
     rowen.addEventListener("mouseener",mouseenter_rowen(y,x+1,y,x));
   }catch(e){}
@@ -128,13 +114,39 @@ function mouseenter_rowen(y_,x_,y,x){
   try{
     rowen=document.getElementById(array_rowen[y-1][x]);
     rowen.removeEventListener("mouseener",mouseenter_rowen(y-1,x,y,x));
+  }catch(e){}
+  try{
     rowen=document.getElementById(array_rowen[y+1][x]);
     rowen.removeEventListener("mouseener",mouseenter_rowen(y+1,x,y,x));
+  }catch(e){}
+  try{
     rowen=document.getElementById(array_rowen[y][x-1]);
     rowen.removeEventListener("mouseener",mouseenter_rowen(y,x-1,y,x));
+  }catch(e){}
+  try{
     rowen=document.getElementById(array_rowen[y][x+1]);
     rowen.removeEventListener("mouseener",mouseenter_rowen(y,x+1,y,x));
   }catch(e){}
+}
+
+function create_rowen(id,x,y){
+  counter_rowen++;
+
+  var rowen=document.createElement("div");
+  rowen.setAttribute("class","rowen "+array_color[Math.floor(Math.random() * 6)]);
+  rowen.setAttribute("id",id);
+  document.body.appendChild(rowen);
+
+  array_rowen[y][x]=id;
+
+  set_size(id,"8vh","6vh");
+  set_posi(id,"calc(82vh - 8vh * "+y+")","calc(50vw - 30vh + 6vh * " + x + ")");
+}
+
+function delete_rowen(id){
+  var rowen=document.getElementById("rowen"+id);
+  document.body.removeChild(rowen);
+  counter_rowen--;
 }
 
 function create_div(id){
