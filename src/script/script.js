@@ -47,7 +47,7 @@ function born_rowen(){
     for(var j=0; j<10; j++){
       for(var i=0; i<10; i++){
         var id="rowen"+ Number(i*10+j);
-        document.getElementById("rowen"+(i*10+j)).addEventListener("mousedown",function(){mousedown_rowen("rowen" + ( i * 10 + j ))});
+        document.getElementById(id).addEventListener("mousedown",function(){mousedown_rowen(id)});
       }
     }
   }
