@@ -44,11 +44,11 @@ function born_rowen(){
     timer_born_rowen=setTimeout(born_rowen,50);
   }
   else{
-    /*for(var j=0; j<10; j++){
+    for(var j=0; j<10; j++){
       for(var i=0; i<10; i++){
-        document.getElementById("rowen"+(i*10+j)).addEventListener("mousedown",mousedown_rowen("rowen"+(i*10+j)));
+        document.getElementById("rowen"+(i*10+j)).addEventListener("mousedown",function(){mousedown_rowen("rowen"+(i*10+j))});
       }
-    }*/
+    }
   }
 }
 
@@ -87,19 +87,19 @@ function mousedown_rowen(id){
   }
   try{
     rowen=document.getElementById(array_rowen[y-1][x]);
-    rowen.addEventListener("mouseener",mouseenter_rowen(y-1,x,y,x));
+    rowen.addEventListener("mouseener",function(){mouseenter_rowen(y-1,x,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y+1][x]);
-    rowen.addEventListener("mouseener",mouseenter_rowen(y+1,x,y,x));
+    rowen.addEventListener("mouseener",function(){mouseenter_rowen(y+1,x,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x-1]);
-    rowen.addEventListener("mouseener",mouseenter_rowen(y,x-1,y,x));
+    rowen.addEventListener("mouseener",function(){mouseenter_rowen(y,x-1,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x+1]);
-    rowen.addEventListener("mouseener",mouseenter_rowen(y,x+1,y,x));
+    rowen.addEventListener("mouseener",function(){mouseenter_rowen(y,x+1,y,x)});
   }catch(e){}
 }
 
@@ -113,19 +113,19 @@ function mouseenter_rowen(y_,x_,y,x){
 
   try{
     rowen=document.getElementById(array_rowen[y-1][x]);
-    rowen.removeEventListener("mouseener",mouseenter_rowen(y-1,x,y,x));
+    rowen.removeEventListener("mouseener",function(){mouseenter_rowen(y-1,x,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y+1][x]);
-    rowen.removeEventListener("mouseener",mouseenter_rowen(y+1,x,y,x));
+    rowen.removeEventListener("mouseener",function(){mouseenter_rowen(y+1,x,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x-1]);
-    rowen.removeEventListener("mouseener",mouseenter_rowen(y,x-1,y,x));
+    rowen.removeEventListener("mouseener",function(){mouseenter_rowen(y,x-1,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x+1]);
-    rowen.removeEventListener("mouseener",mouseenter_rowen(y,x+1,y,x));
+    rowen.removeEventListener("mouseener",function(){mouseenter_rowen(y,x+1,y,x)});
   }catch(e){}
 }
 
