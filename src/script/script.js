@@ -14,6 +14,7 @@ array_rowen[7]=[0,0,0,0,0,0,0,0,0,0];
 array_rowen[8]=[0,0,0,0,0,0,0,0,0,0];
 array_rowen[9]=[0,0,0,0,0,0,0,0,0,0];
 array_rowen[10]=[0,0,0,0,0,0,0,0,0,0];
+var array_rowen_c=array_rowen;
 
 var btn=document.getElementById("PLAY");
 btn.setAttribute("onclick","play_click()");
@@ -48,31 +49,6 @@ function born_rowen(){
       for(var i=0; i<10; i++){
         var id="rowen"+ Number(i*10+j);
         document.getElementById(id).addEventListener("mousedown",function(event){mousedown_rowen(id); return false;});
-      }
-    }
-  }
-}
-
-function drop_rowen(){
-  var y=0;
-  var first_hole=[0,0,0,0,0,0,0,0,0,0];
-  for(var i=0; i<10; i++){
-    y=0;
-    first_hole[i]=0;
-    while(array_rowen[y][i] != 0){
-      y++;
-      first_hole[i]=y;
-    }
-  }
-  for(var i=0; i<10; i++){
-    if(first_hole[i] < 10){
-      for(var j=first_hole[i]; j<10; j++){
-        array_rowen[j][i]=array_rowen[j+1][i];
-        array_rowen[j+1][i]=0;
-        if(array_rowen[j][i]){
-          set_posi(array_rowen[j][i],"calc(82vh - 8vh * "+ j +")",
-                   "calc(50vw - 30vh + 6vh * " + i + ")");
-        }
       }
     }
   }
@@ -130,6 +106,102 @@ function mouseenter_rowen(y_,x_,y,x){
   }catch(e){}
 }
 
+function check_rowen(){
+  for(var i=0; i<10; i++){
+    for(var j=0; j<10; j++){
+      var id=array_rowen[i][j];
+      var rowen=document.getElementById(id);
+      var color=rowen.class;
+      var rowen_=n;
+      var color_=n;
+      switch(1){
+        case 1:
+          try{
+            var rowen_=document.getElementById(array_rowen[i-1][j]);
+            var color_=rowen_.class;
+          }catch(e){}
+          if(color == color_){
+            try{
+              var rowen_=document.getElementById(array_rowen[i-2][j]);
+              var color_=rowen_.class;
+            }catch(e){}
+            if(color == color_){clash_rowen(id,"i-")}
+          }
+        case 2:
+          try{
+            var rowen_=document.getElementById(array_rowen[i+1][j]);
+            var color_=rowen_.class;
+          }catch(e){}
+          if(color == color_){
+            try{
+              var rowen_=document.getElementById(array_rowen[i+2][j]);
+              var color_=rowen_.class;
+            }catch(e){}
+            if(color == color_){clash_rowen(id,"i+")}
+          }
+        case 3:
+          try{
+            var rowen_=document.getElementById(array_rowen[i][j-1]);
+            var color_=rowen_.class;
+          }catch(e){}
+          if(color == color_){
+            try{
+              var rowen_=document.getElementById(array_rowen[i][j-2]);
+              var color_=rowen_.class;
+            }catch(e){}
+            if(color == color_){clash_rowen(id,"j-")}
+          }
+        case 4:
+          try{
+            var rowen_=document.getElementById(array_rowen[i][j+1]);
+            var color_=rowen_.class;
+          }catch(e){}
+          if(color == color_){
+            try{
+              var rowen_=document.getElementById(array_rowen[i][j+2]);
+              var color_=rowen_.class;
+            }catch(e){}
+            if(color == color_){clash_rowen(id,"j+")}
+          }
+      }
+    }
+  }
+  for(var i=0; i<10; i++){
+    for(var j=0; j<10; j++){
+      if(array_rowen_c[i][j] == 1){delete_rowen(array_rowen[i][j]);}
+    }
+  }
+}
+
+function clash_rowen(id,houkou){
+  
+}
+
+function drop_rowen(){
+  var y=0;
+  var first_hole=[0,0,0,0,0,0,0,0,0,0];
+  for(var i=0; i<10; i++){
+    y=0;
+    first_hole[i]=0;
+    while(array_rowen[y][i] != 0){
+      y++;
+      first_hole[i]=y;
+    }
+  }
+  for(var i=0; i<10; i++){
+    if(first_hole[i] < 10){
+      for(var j=first_hole[i]; j<10; j++){
+        array_rowen[j][i]=array_rowen[j+1][i];
+        array_rowen[j+1][i]=0;
+        if(array_rowen[j][i]){
+          set_posi(array_rowen[j][i],"calc(82vh - 8vh * "+ j +")",
+                   "calc(50vw - 30vh + 6vh * " + i + ")");
+        }
+      }
+    }
+  }
+}
+
 function create_rowen(id,x,y){
   counter_rowen++;
 
@@ -145,7 +217,7 @@ function create_rowen(id,x,y){
 }
 
 function delete_rowen(id){
-  var rowen=document.getElementById("rowen"+id);
+  var rowen=document.getElementById(id);
   document.body.removeChild(rowen);
   counter_rowen--;
 }
