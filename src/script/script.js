@@ -125,7 +125,7 @@ function check_rowen(){
               var rowen_=document.getElementById(array_rowen[i-2][j]);
               var color_=rowen_.class;
             }catch(e){}
-            if(color == color_){clash_rowen(id,"i-")}
+            if(color == color_){clash_rowen(i,j,"i-")}
           }
         case 2:
           try{
@@ -137,7 +137,7 @@ function check_rowen(){
               var rowen_=document.getElementById(array_rowen[i+2][j]);
               var color_=rowen_.class;
             }catch(e){}
-            if(color == color_){clash_rowen(id,"i+")}
+            if(color == color_){clash_rowen(i,j,"i+")}
           }
         case 3:
           try{
@@ -149,7 +149,7 @@ function check_rowen(){
               var rowen_=document.getElementById(array_rowen[i][j-2]);
               var color_=rowen_.class;
             }catch(e){}
-            if(color == color_){clash_rowen(id,"j-")}
+            if(color == color_){clash_rowen(i,j,"j-")}
           }
         case 4:
           try{
@@ -161,20 +161,38 @@ function check_rowen(){
               var rowen_=document.getElementById(array_rowen[i][j+2]);
               var color_=rowen_.class;
             }catch(e){}
-            if(color == color_){clash_rowen(id,"j+")}
+            if(color == color_){clash_rowen(i,j,"j+")}
           }
       }
     }
   }
   for(var i=0; i<10; i++){
     for(var j=0; j<10; j++){
-      if(array_rowen_c[i][j] == 1){delete_rowen(array_rowen[i][j]);}
+      if(array_rowen_c[i][j] == 1){delete_rowen(array_rowen[i][j]); array_rowen_c[i][j] =0;}
     }
   }
 }
 
-function clash_rowen(id,houkou){
-  
+function clash_rowen(i,j,houkou){
+  array_rowen_c[i][j]=1;
+  switch(houkou){
+    case "i-":
+      array_rowen_c[i-1][j]=1;
+      array_rowen_c[i-2][j]=1;
+      break;
+    case "i+":
+      array_rowen_c[i+1][j]=1;
+      array_rowen_c[i+2][j]=1;
+      break;
+    case "j-":
+      array_rowen_c[i][j-1]=1;
+      array_rowen_c[i][j-2]=1;
+      break;
+    case "j+":
+      array_rowen_c[i][j+1]=1;
+      array_rowen_c[i][j+2]=1;
+      break;
+  }
 }
 
 function drop_rowen(){
