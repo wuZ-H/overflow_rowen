@@ -64,19 +64,19 @@ function mousedown_rowen(id){
   }
   try{
     rowen=document.getElementById(array_rowen[y-1][x]);
-    rowen.addEventListener("mouseener",function(){mouseenter_rowen(y-1,x,y,x)});
+    rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y-1,x,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y+1][x]);
-    rowen.addEventListener("mouseener",function(){mouseenter_rowen(y+1,x,y,x)});
+    rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y+1,x,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x-1]);
-    rowen.addEventListener("mouseener",function(){mouseenter_rowen(y,x-1,y,x)});
+    rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y,x-1,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x+1]);
-    rowen.addEventListener("mouseener",function(){mouseenter_rowen(y,x+1,y,x)});
+    rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y,x+1,y,x)});
   }catch(e){}
 }
 
@@ -90,19 +90,19 @@ function mouseenter_rowen(y_,x_,y,x){
 
   try{
     rowen=document.getElementById(array_rowen[y-1][x]);
-    rowen.removeEventListener("mouseener",function(){mouseenter_rowen(y-1,x,y,x)});
+    rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y-1,x,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y+1][x]);
-    rowen.removeEventListener("mouseener",function(){mouseenter_rowen(y+1,x,y,x)});
+    rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y+1,x,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x-1]);
-    rowen.removeEventListener("mouseener",function(){mouseenter_rowen(y,x-1,y,x)});
+    rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y,x-1,y,x)});
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x+1]);
-    rowen.removeEventListener("mouseener",function(){mouseenter_rowen(y,x+1,y,x)});
+    rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y,x+1,y,x)});
   }catch(e){}
 }
 
