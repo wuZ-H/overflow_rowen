@@ -81,7 +81,7 @@ function mousedown_rowen(id){
 }
 
 function mouseenter_rowen(y_,x_,y,x){
-  var rowen=document.getElementById(array_rowen[y_][x_]);;
+  var rowen=document.getElementById(array_rowen[y_][x_]);
   var id=array_rowen[y][x];
   array_rowen[y][x]=array_rowen[y_][x_];
   array_rowen[y_][x_]=id;
