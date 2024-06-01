@@ -54,6 +54,16 @@ function born_rowen(){
   }
 }
 
+function resborn_rowen(){
+  clearTimeout(timer_resborn_rowen);
+  timer_born_rowen=null;
+  if(counter_rowen<100){
+  }
+  else{
+    
+  }
+}
+
 function mousedown_rowen(id){
   var rowen=document.getElementById(id);
   var y=0;
