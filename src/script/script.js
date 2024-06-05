@@ -96,19 +96,19 @@ function mouseenter_rowen(y_,x_,y,x){
   
   try{
     rowen=document.getElementById(array_rowen[y-1][x]);
-    rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y-1,x,y,x)});
+    rowen.removeEventListener("mouseenter");
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y+1][x]);
-    rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y+1,x,y,x)});
+    rowen.removeEventListener("mouseenter");
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x-1]);
-    rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y,x-1,y,x)});
+    rowen.removeEventListener("mouseenter");
   }catch(e){}
   try{
     rowen=document.getElementById(array_rowen[y][x+1]);
-    rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y,x+1,y,x)});
+    rowen.removeEventListener("mouseenter");
   }catch(e){}
   
   array_rowen[y][x]=array_rowen[y_][x_];
