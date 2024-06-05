@@ -93,11 +93,7 @@ function mousedown_rowen(id){
 function mouseenter_rowen(y_,x_,y,x){
   var rowen=document.getElementById(array_rowen[y_][x_]);
   var id=array_rowen[y][x];
-  array_rowen[y][x]=array_rowen[y_][x_];
-  array_rowen[y_][x_]=id;
-  set_posi(array_rowen[y][x],"calc(82vh - 8vh * "+ y +")","calc(50vw - 30vh + 6vh * " + x + ")");
-  set_posi(array_rowen[y_][x_],"calc(82vh - 8vh * "+ y_ +")","calc(50vw - 30vh + 6vh * " + x_ + ")");
-
+  
   try{
     rowen=document.getElementById(array_rowen[y-1][x]);
     rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y-1,x,y,x)});
@@ -114,6 +110,11 @@ function mouseenter_rowen(y_,x_,y,x){
     rowen=document.getElementById(array_rowen[y][x+1]);
     rowen.removeEventListener("mouseenter",function(){mouseenter_rowen(y,x+1,y,x)});
   }catch(e){}
+  
+  array_rowen[y][x]=array_rowen[y_][x_];
+  array_rowen[y_][x_]=id;
+  set_posi(array_rowen[y][x],"calc(82vh - 8vh * "+ y +")","calc(50vw - 30vh + 6vh * " + x + ")");
+  set_posi(array_rowen[y_][x_],"calc(82vh - 8vh * "+ y_ +")","calc(50vw - 30vh + 6vh * " + x_ + ")");
 }
 
 function check_rowen(){
