@@ -100,23 +100,23 @@ function mouseenter_rowen(y_,x_,y,x){
   set_posi(array_rowen[y_][x_],"calc(82vh - 8vh * "+ y_ +")","calc(50vw - 30vh + 6vh * " + x_ + ")");
   
   try{
-    rowen=document.getElementById(array_rowen[y_][x_]);
+    rowen=document.getElementById(array_rowen[y][x]);
     rowen.removeEventListener("mouseenter");
   }catch(e){}  
   try{
-    rowen=document.getElementById(array_rowen[y_-1][x_]);
+    rowen=document.getElementById(array_rowen[y-1][x]);
     rowen.removeEventListener("mouseenter");
   }catch(e){}
   try{
-    rowen=document.getElementById(array_rowen[y_+1][x_]);
+    rowen=document.getElementById(array_rowen[y+1][x]);
     rowen.removeEventListener("mouseenter");
   }catch(e){}
   try{
-    rowen=document.getElementById(array_rowen[y_][x_-1]);
+    rowen=document.getElementById(array_rowen[y][x-1]);
     rowen.removeEventListener("mouseenter");
   }catch(e){}
   try{
-    rowen=document.getElementById(array_rowen[y_][x_+1]);
+    rowen=document.getElementById(array_rowen[y][x+1]);
     rowen.removeEventListener("mouseenter");
   }catch(e){}
 }
