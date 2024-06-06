@@ -24,6 +24,8 @@ function play_click(){
   document.body.removeChild(p);
   var btn=document.getElementById("PLAY");
   document.body.removeChild(btn);
+  document.body.addEventListener("mousedown",function(event){mousedown_body(event.pageX,event.pageY); return false;});
+  document.body.addEventListener("mouseup"function(event){mouseup_body(); return false;});
 
   create_div("box");
   set_size("box","80vh","60vh");
@@ -45,12 +47,12 @@ function born_rowen(){
     timer_born_rowen=setTimeout(born_rowen,50);
   }
   else{
-    for(var j=0; j<10; j++){
+    /*for(var j=0; j<10; j++){
       for(var i=0; i<10; i++){
         var id="rowen"+ Number(i*10+j);
         document.getElementById(id).addEventListener("mousedown",function(event){mousedown_rowen(id); return false;});
       }
-    }
+    }*/
   }
 }
 
@@ -64,7 +66,15 @@ function resborn_rowen(){
   }
 }
 
-function mousedown_rowen(id){
+function mousedown_body(x,y){
+  
+}
+
+function mouseup_body(){
+  
+}
+
+/*function mousedown_rowen(id){
   var rowen=document.getElementById(id);
   var y=0;
   var x=array_rowen[y].indexOf(id);
@@ -88,9 +98,9 @@ function mousedown_rowen(id){
     rowen=document.getElementById(array_rowen[y][x+1]);
     rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y,x+1,y,x)});
   }catch(e){}
-}
+}*/
 
-function mouseenter_rowen(y_,x_,y,x){
+/*function mouseenter_rowen(y_,x_,y,x){
   var rowen=document.getElementById(array_rowen[y_][x_]);
   var id=array_rowen[y][x];
   array_rowen[y][x]=array_rowen[y_][x_];
@@ -119,7 +129,7 @@ function mouseenter_rowen(y_,x_,y,x){
     rowen=document.getElementById(array_rowen[y][x+1]);
     rowen.removeEventListener("mouseenter");
   }catch(e){}
-}
+}*/
 
 function check_rowen(){
   for(var i=0; i<10; i++){
