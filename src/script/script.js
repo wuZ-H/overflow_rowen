@@ -81,9 +81,14 @@ function mousedown_body(x,y){
       t=rowen.style.top;
       b=rowen.style.bottom;
       if(l<x<r && t<y<b){
+        document.body.addEventListener("mousemove",function(event){mousemove_body(event.pageX,event.pageY); return false;});
       }
     }
   }
+}
+
+function mousemove_body(x,y){
+  
 }
 
 function mouseup_body(){
