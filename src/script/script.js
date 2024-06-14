@@ -68,6 +68,22 @@ function resborn_rowen(){
 
 function mousedown_body(x,y){
   var rowen=document.getElementById(array_rowen[0][0]);
+  var l=1;
+  var r=1;
+  var t=1;
+  var b=1;
+  for(var j=0; j<10; j++){
+    for(var i=0; i<10; i++){
+      rowen=document.getElementById(array_rowen[i][j]);
+      l=rowen.style.left;
+      r=rowen.style.left+rowen.width;
+      t=rowen.style.right;
+      b=rowen.style.right+rowen.height;
+      if(l<x<r && t<y<b){
+        
+      }
+    }
+  }
 }
 
 function mouseup_body(){
