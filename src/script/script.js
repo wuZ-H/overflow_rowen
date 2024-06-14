@@ -81,18 +81,55 @@ function mousedown_body(x,y){
       t=rowen.style.top;
       b=rowen.style.bottom;
       if(l<x<r && t<y<b){
-        document.body.addEventListener("mousemove",function(event){mousemove_body(event.pageX,event.pageY); return false;});
+        document.body.addEventListener("mousemove",function(event){mousemove_body(event.pageX,event.pageY,l,r,t,b,i,j); return false;});
       }
     }
   }
 }
 
-function mousemove_body(x,y){
-  
+function mousemove_body(x,y,l,r,t,b,i,j){
+  var rowen=document.getElementById(array_rowen[i][j]);
+  var id=array_rowen[i][j];
+  var i_=i;
+  var j_=j;
+  if(x<l){
+    j_=j-1;
+    array_rowen[i][j]=array_rowen[i_][j_];
+    array_rowen[i_][j_]=id;
+    set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
+    set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
+    document.body.removeEventListener("mousemove");
+  }
+  else if(x>r){
+    j_=j+1;
+    array_rowen[i][j]=array_rowen[i_][j_];
+    array_rowen[i_][j_]=id;
+    set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
+    set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
+    document.body.removeEventListener("mousemove");
+  }
+  else if(y<t){
+    i_=i+1;
+    array_rowen[i][j]=array_rowen[i_][j_];
+    array_rowen[i_][j_]=id;
+    set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
+    set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
+    document.body.removeEventListener("mousemove");
+  }
+  else if(y>b){
+    i_=i-1;
+    array_rowen[i][j]=array_rowen[i_][j_];
+    array_rowen[i_][j_]=id;
+    set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
+    set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
+    document.body.removeEventListener("mousemove");
+  }
 }
 
 function mouseup_body(){
-  
+  try{
+    document.body.removeEventListener("mousemove");
+  }catch(e){}
 }
 
 /*function mousedown_rowen(id){
