@@ -25,7 +25,7 @@ function play_click(){
   var btn=document.getElementById("PLAY");
   document.body.removeChild(btn);
   document.body.addEventListener("mousedown",function(event){mousedown_body(event.pageX,event.pageY); return false;});
-  document.body.addEventListener("mouseup"function(event){mouseup_body(); return false;});
+  document.body.addEventListener("mouseup"function(event){mouseup_body(); return false;};
 
   create_div("box");
   set_size("box","80vh","60vh");
@@ -67,7 +67,7 @@ function resborn_rowen(){
 }
 
 function mousedown_body(x,y){
-  
+  var rowen=document.getElementById(array_rowen[0][0]);
 }
 
 function mouseup_body(){
