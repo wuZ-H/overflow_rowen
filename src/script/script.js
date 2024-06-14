@@ -60,6 +60,7 @@ function resborn_rowen(){
   clearTimeout(timer_resborn_rowen);
   timer_born_rowen=null;
   if(counter_rowen<100){
+    
   }
   else{
     
@@ -80,22 +81,6 @@ function mousedown_body(x,y){
       t=rowen.style.top;
       b=rowen.style.bottom;
       if(l<x<r && t<y<b){
-        try{
-          rowen=document.getElementById(array_rowen[y-1][x]);
-          rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y-1,x,y,x)});
-        }catch(e){}
-        try{
-          rowen=document.getElementById(array_rowen[y+1][x]);
-          rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y+1,x,y,x)});
-        }catch(e){}
-        try{
-          rowen=document.getElementById(array_rowen[y][x-1]);
-          rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y,x-1,y,x)});
-        }catch(e){}
-        try{
-          rowen=document.getElementById(array_rowen[y][x+1]);
-          rowen.addEventListener("mouseenter",function(){mouseenter_rowen(y,x+1,y,x)});
-        }catch(e){}
       }
     }
   }
@@ -131,7 +116,7 @@ function mouseup_body(){
   }catch(e){}
 }*/
 
-function mouseenter_rowen(y_,x_,y,x){
+/*function mouseenter_rowen(y_,x_,y,x){
   var rowen=document.getElementById(array_rowen[y_][x_]);
   var id=array_rowen[y][x];
   array_rowen[y][x]=array_rowen[y_][x_];
@@ -160,7 +145,7 @@ function mouseenter_rowen(y_,x_,y,x){
     rowen=document.getElementById(array_rowen[y][x+1]);
     rowen.removeEventListener("mouseenter");
   }catch(e){}
-}
+}*/
 
 function check_rowen(){
   for(var i=0; i<10; i++){
