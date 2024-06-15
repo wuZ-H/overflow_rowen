@@ -60,7 +60,12 @@ function resborn_rowen(){
   clearTimeout(timer_resborn_rowen);
   timer_born_rowen=null;
   if(counter_rowen<100){
-    
+    for(){
+      
+    }
+    create_rowen("rowen"+counter_rowen,counter_rowen % 10,10);
+    drop_rowen();
+    timer_born_rowen=setTimeout(born_rowen,50);
   }
   else{
     
@@ -251,29 +256,32 @@ function check_rowen(){
   }
   for(var i=0; i<10; i++){
     for(var j=0; j<10; j++){
-      if(array_rowen_c[i][j] == 1){delete_rowen(array_rowen[i][j]); array_rowen_c[i][j] =0;}
+      if(array_rowen_c[i][j]){
+        delete_rowen(array_rowen[i][j]);
+        array_rowen[i][j] =0;
+      }
     }
   }
 }
 
 function clash_rowen(i,j,houkou){
-  array_rowen_c[i][j]=1;
+  array_rowen_c[i][j]=array_rowen[i][j];
   switch(houkou){
     case "i-":
-      array_rowen_c[i-1][j]=1;
-      array_rowen_c[i-2][j]=1;
+      array_rowen_c[i-1][j]=array_rowen[i-1][j];
+      array_rowen_c[i-2][j]=array_rowen[i-2][j];
       break;
     case "i+":
-      array_rowen_c[i+1][j]=1;
-      array_rowen_c[i+2][j]=1;
+      array_rowen_c[i+1][j]=array_rowen[i+1][j];
+      array_rowen_c[i+2][j]=array_rowen[i+2][j];
       break;
     case "j-":
-      array_rowen_c[i][j-1]=1;
-      array_rowen_c[i][j-2]=1;
+      array_rowen_c[i][j-1]=array_rowen[i][j-1];
+      array_rowen_c[i][j-2]=array_rowen[i][j-2];
       break;
     case "j+":
-      array_rowen_c[i][j+1]=1;
-      array_rowen_c[i][j+2]=1;
+      array_rowen_c[i][j+1]=array_rowen[i][j+1];
+      array_rowen_c[i][j+2]=array_rowen[i][j+2];
       break;
   }
 }
