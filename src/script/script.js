@@ -48,6 +48,7 @@ function born_rowen(){
     timer_born_rowen=setTimeout(born_rowen,30);
   }
   else{
+    //check_rowen();
     /*for(var j=0; j<10; j++){
       for(var i=0; i<10; i++){
         var id="rowen"+ Number(i*10+j);
@@ -78,7 +79,7 @@ function resborn_rowen(){
     timer_born_rowen=setTimeout(born_rowen,10);
   }
   else{
-    
+    //check_rowen();
   }
 }
 
