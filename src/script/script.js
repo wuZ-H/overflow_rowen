@@ -145,7 +145,7 @@ function mouseup_body(){
   try{
     document.body.removeEventListener("mousemove");
   }catch(e){}
-  check_rowen();
+  //check_rowen();
 }
 
 /*function mousedown_rowen(id){
@@ -280,20 +280,44 @@ function clash_rowen(i,j,houkou){
   array_rowen_c[i][j]=array_rowen[i][j];
   switch(houkou){
     case "i-":
-      array_rowen_c[i-1][j]=array_rowen[i-1][j];
-      array_rowen_c[i-2][j]=array_rowen[i-2][j];
+      try(){
+        array_rowen_c[i-1][j]=array_rowen[i-1][j];
+      }
+      catch(e){}
+      try(){
+        array_rowen_c[i-2][j]=array_rowen[i-2][j];
+      }
+      catch(e){}
       break;
     case "i+":
-      array_rowen_c[i+1][j]=array_rowen[i+1][j];
-      array_rowen_c[i+2][j]=array_rowen[i+2][j];
+      try(){
+        array_rowen_c[i+1][j]=array_rowen[i+1][j];
+      }
+      catch(e){}
+      try(){
+        array_rowen_c[i+2][j]=array_rowen[i+2][j];
+      }
+      catch(e){}
       break;
     case "j-":
-      array_rowen_c[i][j-1]=array_rowen[i][j-1];
-      array_rowen_c[i][j-2]=array_rowen[i][j-2];
+      try(){
+        array_rowen_c[i][j-1]=array_rowen[i][j-1];
+      }
+      catch(e){}
+      try(){
+        array_rowen_c[i][j-2]=array_rowen[i][j-2];
+      }
+      catch(e){}
       break;
     case "j+":
-      array_rowen_c[i][j+1]=array_rowen[i][j+1];
-      array_rowen_c[i][j+2]=array_rowen[i][j+2];
+      try(){
+        array_rowen_c[i][j+1]=array_rowen[i][j+1];
+      }
+      catch(e){}
+      try(){
+        array_rowen_c[i][j+2]=array_rowen[i][j+2];
+      }
+      catch(e){}
       break;
   }
 }
