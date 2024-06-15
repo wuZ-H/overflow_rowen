@@ -145,6 +145,7 @@ function mouseup_body(){
   try{
     document.body.removeEventListener("mousemove");
   }catch(e){}
+  check_rowen();
 }
 
 /*function mousedown_rowen(id){
@@ -272,6 +273,7 @@ function check_rowen(){
       }
     }
   }
+  resborn_rowen();
 }
 
 function clash_rowen(i,j,houkou){
