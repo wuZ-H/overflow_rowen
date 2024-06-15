@@ -211,8 +211,8 @@ function check_rowen(){
       var id=array_rowen[i][j];
       var rowen=document.getElementById(id);
       var color=rowen.class;
-      var rowen_=n;
-      var color_=n;
+      var rowen_=0;
+      var color_=0;
       switch(1){
         case 1:
           try{
