@@ -41,10 +41,11 @@ function play_click(){
 function born_rowen(){
   clearTimeout(timer_born_rowen);
   timer_born_rowen=null;
+  
   if(counter_rowen<100){
     create_rowen("rowen"+counter_rowen,counter_rowen % 10,10);
     drop_rowen();
-    timer_born_rowen=setTimeout(born_rowen,50);
+    timer_born_rowen=setTimeout(born_rowen,30);
   }
   else{
     /*for(var j=0; j<10; j++){
@@ -59,13 +60,22 @@ function born_rowen(){
 function resborn_rowen(){
   clearTimeout(timer_resborn_rowen);
   timer_born_rowen=null;
+  
   if(counter_rowen<100){
-    for(){
-      
+    var y=0;
+    var x=0;
+    while(id !=0){
+      y++;
+      if(y>9){
+        y=0;
+        x++;
+      }
+      id=array_rowen_c[y][x];
     }
-    create_rowen("rowen"+counter_rowen,counter_rowen % 10,10);
+    create_rowen(array_rowen_c[y][x],x,10);
+    array_rowen_c=0;
     drop_rowen();
-    timer_born_rowen=setTimeout(born_rowen,50);
+    timer_born_rowen=setTimeout(born_rowen,10);
   }
   else{
     
