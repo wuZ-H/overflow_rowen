@@ -96,7 +96,7 @@ function mousedown_body(x,y){
       r=rowen.offsetLeft + rowen.offsetWidth;
       t=rowen.offsetTop;
       b=rowen.offsetTop + rowen.offsetHeight;
-      if(l<x<r && t<y<b){
+      if(l<x && x<r && t<y && y<b){
         document.body.addEventListener("mousemove",function(event){mousemove_body(event.pageX,event.pageY,l,r,t,b,i,j); return false;});
       }
     }
