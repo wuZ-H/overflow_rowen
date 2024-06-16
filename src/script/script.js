@@ -114,7 +114,9 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     array_rowen[i_][j_]=id;
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
-    document.body.removeEventListener("mousemove");
+    try{
+      document.body.removeEventListener("mousemove");
+    }catch(e){}  
   }
   else if(x>r && array_rowen[i][j+1]){
     j_=j+1;
@@ -122,7 +124,9 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     array_rowen[i_][j_]=id;
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
-    document.body.removeEventListener("mousemove");
+    try{
+      document.body.removeEventListener("mousemove");
+    }catch(e){}  
   }
   else if(y<t && array_rowen[i+1][j]){
     i_=i+1;
@@ -130,7 +134,9 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     array_rowen[i_][j_]=id;
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
-    document.body.removeEventListener("mousemove");
+    try{
+      document.body.removeEventListener("mousemove");
+    }catch(e){}  
   }
   else if(y>b && array_rowen[i-1][j]){
     i_=i-1;
@@ -138,7 +144,9 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     array_rowen[i_][j_]=id;
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
-    document.body.removeEventListener("mousemove");
+    try{
+      document.body.removeEventListener("mousemove");
+    }catch(e){}  
   }
 }
 
