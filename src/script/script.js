@@ -92,10 +92,10 @@ function mousedown_body(x,y){
   for(var j=0; j<10; j++){
     for(var i=0; i<10; i++){
       rowen=document.getElementById(array_rowen[i][j]);
-      l=rowen.style.left;
-      r=rowen.style.right;
-      t=rowen.style.top;
-      b=rowen.style.bottom;
+      l=rowen.offsetLeft;
+      r=rowen.offsetLeft + rowen.offsetWidth;
+      t=rowen.offsetTop;
+      b=rowen.offsetTop + rowen.offsetHeight;
       if(l<x<r && t<y<b){
         document.body.addEventListener("mousemove",function(event){mousemove_body(event.pageX,event.pageY,l,r,t,b,i,j); return false;});
       }
