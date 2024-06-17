@@ -279,7 +279,7 @@ function check_rowen(){
   }
   for(var i=0; i<10; i++){
     for(var j=0; j<10; j++){
-      if(array_rowen_c[i][j]){
+      if(array_rowen_c[i][j] != 0){
         delete_rowen(array_rowen[i][j]);
         array_rowen[i][j] =0;
       }
