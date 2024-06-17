@@ -1,6 +1,7 @@
 var counter_rowen=0;
-var shift_rowen_a=0;
-var shift_rowen_b=0;
+var shift_rowen_=[0];
+shift_rowen_[0]=[0,0];
+shift_rowen_[1]=[0,0];
 var timer_born_rowen;
 var timer_resborn_rowen;
 var array_color=["red","orange","yellow","green","blue","purple"];
@@ -384,8 +385,10 @@ function create_rowen(id,x,y){
 }
 
 function shift_rowrn(x_a,y_a,x_b,y_b){
-  shfit_rowen_a=array_rowen[y_a][x_a];
-  shfit_rowen_b=array_rowen[y_b][x_b];
+  shfit_rowen[0][0]=y_a;
+  shfit_rowen[0][1]=x_a;
+  shfit_rowen[1][0]=y_b;
+  shfit_rowen[1][1]=x_b;
   array_rowen[y_a][x_a]=shfit_rowen_b;
   array_rowen[y_b][x_b]=shfit_rowen_a;
 
