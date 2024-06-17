@@ -121,46 +121,32 @@ function mousedown_body(x,y){
 }
 
 function mousemove_body(x,y,l,r,t,b,i,j){
-  var rowen=document.getElementById(array_rowen[i][j]);
-  var id=array_rowen[i][j];
   var i_=i;
   var j_=j;
   if(x<l && array_rowen[i][j-1]){
     j_=j-1;
-    array_rowen[i][j]=array_rowen[i_][j_];
-    array_rowen[i_][j_]=id;
-    set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
-    set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
+    shift_rowrn(j,i,j_,i_);
     try{
       document.body.removeEventListener("mousemove", mousemove_body_);
     }catch(e){}  
   }
   else if(x>r && array_rowen[i][j+1]){
     j_=j+1;
-    array_rowen[i][j]=array_rowen[i_][j_];
-    array_rowen[i_][j_]=id;
-    set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
-    set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
+    shift_rowrn(j,i,j_,i_);
     try{
       document.body.removeEventListener("mousemove", mousemove_body_);
     }catch(e){}  
   }
   else if(y<t && array_rowen[i+1][j]){
     i_=i+1;
-    array_rowen[i][j]=array_rowen[i_][j_];
-    array_rowen[i_][j_]=id;
-    set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
-    set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
+    shift_rowrn(j,i,j_,i_);
     try{
       document.body.removeEventListener("mousemove", mousemove_body_);
     }catch(e){}  
   }
   else if(y>b && array_rowen[i-1][j]){
     i_=i-1;
-    array_rowen[i][j]=array_rowen[i_][j_];
-    array_rowen[i_][j_]=id;
-    set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
-    set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
+    shift_rowrn(j,i,j_,i_);
     try{
       document.body.removeEventListener("mousemove", mousemove_body_);
     }catch(e){}  
@@ -389,8 +375,8 @@ function shift_rowrn(x_a,y_a,x_b,y_b){
   shfit_rowen[0][1]=x_a;
   shfit_rowen[1][0]=y_b;
   shfit_rowen[1][1]=x_b;
-  array_rowen[y_a][x_a]=shfit_rowen_b;
-  array_rowen[y_b][x_b]=shfit_rowen_a;
+  array_rowen[y_a][x_a]=array_rowen[y_b][x_b];
+  array_rowen[y_b][x_b]=shfit_rowen[y_a][x_a];
 
   set_posi(array_rowen[y_a][x_a],"calc(82vh - 8vh * "+ y_a +")","calc(50vw - 30vh + 6vh * " + x_a + ")");
   set_posi(array_rowen[y_b][x_b],"calc(82vh - 8vh * "+ y_b +")","calc(50vw - 30vh + 6vh * " + x_b + ")");
