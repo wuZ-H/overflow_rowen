@@ -117,7 +117,7 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
     try{
-      document.body.removeEventListener("mousemove", mousemove_body);
+      document.body.removeEventListener("mousemove", mousemove_body_);
     }catch(e){}  
   }
   else if(x>r && array_rowen[i][j+1]){
@@ -127,7 +127,7 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
     try{
-      document.body.removeEventListener("mousemove",mousemove_body);
+      document.body.removeEventListener("mousemove", mousemove_body_);
     }catch(e){}  
   }
   else if(y<t && array_rowen[i+1][j]){
@@ -137,7 +137,7 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
     try{
-      document.body.removeEventListener("mousemove",mousemove_body);
+      document.body.removeEventListener("mousemove", mousemove_body_);
     }catch(e){}  
   }
   else if(y>b && array_rowen[i-1][j]){
@@ -147,14 +147,14 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
     try{
-      document.body.removeEventListener("mousemove",mousemove_body);
+      document.body.removeEventListener("mousemove", mousemove_body_);
     }catch(e){}  
   }
 }
 
 function mouseup_body(){
   try{
-    document.body.removeEventListener("mousemove",mousemove_body);
+    document.body.removeEventListener("mousemove", mousemove_body_);
   }catch(e){}
   //check_rowen();
 }
