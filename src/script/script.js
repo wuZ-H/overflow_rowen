@@ -101,7 +101,7 @@ function mousedown_body(x,y){
         break;
       }
     }
-    if(document.body.onmousemove){break;}
+    if(l<x && x<r && t<y && y<b){break;}
   }
 }
 
