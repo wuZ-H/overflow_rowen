@@ -372,10 +372,10 @@ function create_rowen(id,x,y){
 }
 
 function shift_rowrn(x_a,y_a,x_b,y_b){
-  shift_rowen_[0][0]=y_a;
-  shift_rowen_[0][1]=x_a;
-  shift_rowen_[1][0]=y_b;
-  shift_rowen_[1][1]=x_b;
+  shift_rowen_[0][0]=x_a;
+  shift_rowen_[0][1]=y_a;
+  shift_rowen_[1][0]=x_b;
+  shift_rowen_[1][1]=y_b;
   var id=array_rowen[y_a][x_a];
   array_rowen[y_a][x_a]=array_rowen[y_b][x_b];
   array_rowen[y_b][x_b]=id;
