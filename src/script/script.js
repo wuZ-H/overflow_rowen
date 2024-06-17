@@ -66,7 +66,7 @@ function resborn_rowen(){
     var y=0;
     var x=0;
     var id=0;
-    while(id !=0){
+    while(id ==0){
       y++;
       if(y>9){
         y=0;
