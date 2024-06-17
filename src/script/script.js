@@ -158,7 +158,7 @@ function mouseup_body(){
     document.body.removeEventListener("mousemove", mousemove_body_);
   }catch(e){}
   check_rowen();
-  if(counter_rowen<100){shift_rowrn(shift_rowen_[0][0],shift_rowen_[0][1],shift_rowen_[1][0],shift_rowen_[1][1]);}
+  if(counter_rowen>=100){shift_rowrn(shift_rowen_[0][0],shift_rowen_[0][1],shift_rowen_[1][0],shift_rowen_[1][1]);}
 }
 
 /*function mousedown_rowen(id){
