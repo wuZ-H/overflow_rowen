@@ -60,7 +60,7 @@ function born_rowen(){
 
 function resborn_rowen(){
   clearTimeout(timer_resborn_rowen);
-  timer_born_rowen=null;
+  timer_resborn_rowen=null;
   
   if(counter_rowen<100){
     var y=0;
@@ -77,7 +77,7 @@ function resborn_rowen(){
     create_rowen(array_rowen_c[y][x],x,10);
     array_rowen_c[y][x]=0;
     drop_rowen();
-    timer_born_rowen=setTimeout(born_rowen,25);
+    timer_resborn_rowen=setTimeout(resborn_rowen,25);
   }
   else{
     check_rowen();
