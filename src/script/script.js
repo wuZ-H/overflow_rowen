@@ -1,4 +1,6 @@
 var counter_rowen=0;
+var shift_rowen_a=0;
+var shift_rowen_b=0;
 var timer_born_rowen;
 var timer_resborn_rowen;
 var array_color=["red","orange","yellow","green","blue","purple"];
@@ -379,6 +381,10 @@ function create_rowen(id,x,y){
 
   set_size(id,"8vh","6vh");
   set_posi(id,"calc(82vh - 8vh * "+y+")","calc(50vw - 30vh + 6vh * " + x + ")");
+}
+
+function shift_rowrn(id_a,id_b){
+  
 }
 
 function delete_rowen(id){
