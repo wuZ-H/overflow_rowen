@@ -299,42 +299,34 @@ function clash_rowen(i,j,houkou){
     case "i-":
       try{
         array_rowen_c[i-1][j]=array_rowen[i-1][j];
-      }
-      catch(e){}
+      }catch(e){}
       try{
         array_rowen_c[i-2][j]=array_rowen[i-2][j];
-      }
-      catch(e){}
+      }catch(e){}
       break;
     case "i+":
       try{
         array_rowen_c[i+1][j]=array_rowen[i+1][j];
-      }
-      catch(e){}
+      }catch(e){}
       try{
         array_rowen_c[i+2][j]=array_rowen[i+2][j];
-      }
-      catch(e){}
+      }catch(e){}
       break;
     case "j-":
       try{
         array_rowen_c[i][j-1]=array_rowen[i][j-1];
-      }
-      catch(e){}
+      }catch(e){}
       try{
         array_rowen_c[i][j-2]=array_rowen[i][j-2];
-      }
-      catch(e){}
+      }catch(e){}
       break;
     case "j+":
       try{
         array_rowen_c[i][j+1]=array_rowen[i][j+1];
-      }
-      catch(e){}
+      }catch(e){}
       try{
         array_rowen_c[i][j+2]=array_rowen[i][j+2];
-      }
-      catch(e){}
+      }catch(e){}
       break;
   }
 }
