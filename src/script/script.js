@@ -85,7 +85,7 @@ function resborn_rowen(){
       }
       id=array_rowen_c[y][x];
     }
-    create_rowen(array_rowen_c[y][x],x,10);
+    create_rowen(id,x,10);
     array_rowen_c[y][x]=0;
     drop_rowen();
     timer_resborn_rowen=setTimeout(resborn_rowen,25);
