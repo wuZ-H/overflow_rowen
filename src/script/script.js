@@ -246,48 +246,48 @@ function check_rowen(){
           try{
             var rowen_=document.getElementById(array_rowen[i-1][j]);
             var color_=rowen_.getAttribute("class");
-          }catch(e){}
+          }catch(e){color_=0;}
           if(color == color_){
             try{
               var rowen_=document.getElementById(array_rowen[i-2][j]);
               var color_=rowen_.getAttribute("class");
-            }catch(e){}
+           }catch(e){color_=0;}
             if(color == color_){clash_rowen(i,j,"i-")}
           }
         case 2:
           try{
             var rowen_=document.getElementById(array_rowen[i+1][j]);
             var color_=rowen_.getAttribute("class");
-          }catch(e){}
+          }catch(e){color_=0;}
           if(color == color_){
             try{
               var rowen_=document.getElementById(array_rowen[i+2][j]);
               var color_=rowen_.getAttribute("class");
-            }catch(e){}
+           }catch(e){color_=0;}
             if(color == color_){clash_rowen(i,j,"i+")}
           }
         case 3:
           try{
             var rowen_=document.getElementById(array_rowen[i][j-1]);
             var color_=rowen_.getAttribute("class");
-          }catch(e){}
+          }catch(e){color_=0;}
           if(color == color_){
             try{
               var rowen_=document.getElementById(array_rowen[i][j-2]);
               var color_=rowen_.getAttribute("class");
-            }catch(e){}
+           }catch(e){color_=0;}
             if(color == color_){clash_rowen(i,j,"j-")}
           }
         case 4:
           try{
             var rowen_=document.getElementById(array_rowen[i][j+1]);
             var color_=rowen_.getAttribute("class");
-          }catch(e){}
+          }catch(e){color_=0;}
           if(color == color_){
             try{
               var rowen_=document.getElementById(array_rowen[i][j+2]);
               var color_=rowen_.getAttribute("class");
-            }catch(e){}
+           }catch(e){color_=0;}
             if(color == color_){clash_rowen(i,j,"j+")}
           }
       }
