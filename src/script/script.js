@@ -98,8 +98,10 @@ function mousedown_body(x,y){
       b=rowen.offsetTop + rowen.offsetHeight;
       if(l<x && x<r && t<y && y<b){
         document.body.addEventListener("mousemove",function(event){mousemove_body(event.pageX,event.pageY,l,r,t,b,i,j); return false;});
+        break;
       }
     }
+    if(document.body.onmousemove){break;}
   }
 }
 
