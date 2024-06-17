@@ -97,7 +97,7 @@ function mousedown_body(x,y){
       t=rowen.offsetTop;
       b=rowen.offsetTop + rowen.offsetHeight;
       if(l<x && x<r && t<y && y<b){
-        document.body.addEventListener("mousemove",function(event){mousemove_body(event.pageX,event.pageY,l,r,t,b,i,j); return false;});
+        document.body.addEventListener("mousemove",mousemove_body_=function(event){mousemove_body(event.pageX,event.pageY,l,r,t,b,i,j); return false;});
         break;
       }
     }
@@ -117,7 +117,7 @@ function mousemove_body(x,y,l,r,t,b,i,j){
     set_posi(array_rowen[i][j],"calc(82vh - 8vh * "+ i +")","calc(50vw - 30vh + 6vh * " + j + ")");
     set_posi(array_rowen[i_][j_],"calc(82vh - 8vh * "+ i_ +")","calc(50vw - 30vh + 6vh * " + j_ + ")");
     try{
-      document.body.removeEventListener("mousemove",mousemove_body);
+      document.body.removeEventListener("mousemove", mousemove_body);
     }catch(e){}  
   }
   else if(x>r && array_rowen[i][j+1]){
