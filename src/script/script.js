@@ -227,55 +227,55 @@ function check_rowen(){
     for(var j=0; j<10; j++){
       id=array_rowen[i][j];
       rowen=document.getElementById(id);
-      color=rowen.style.class;
+      color=rowen.getAttribute("class");
       rowen_=0;
       color_=0;
       switch(1){
         case 1:
           try{
             var rowen_=document.getElementById(array_rowen[i-1][j]);
-            var color_=rowen_.style.class;
+            var color_=rowen_.getAttribute("class");
           }catch(e){}
           if(color == color_){
             try{
               var rowen_=document.getElementById(array_rowen[i-2][j]);
-              var color_=rowen_.style.class;
+              var color_=rowen_.getAttribute("class");
             }catch(e){}
             if(color == color_){clash_rowen(i,j,"i-")}
           }
         case 2:
           try{
             var rowen_=document.getElementById(array_rowen[i+1][j]);
-            var color_=rowen_.style.class;
+            var color_=rowen_.getAttribute("class");
           }catch(e){}
           if(color == color_){
             try{
               var rowen_=document.getElementById(array_rowen[i+2][j]);
-              var color_=rowen_.style.class;
+              var color_=rowen_.getAttribute("class");
             }catch(e){}
             if(color == color_){clash_rowen(i,j,"i+")}
           }
         case 3:
           try{
             var rowen_=document.getElementById(array_rowen[i][j-1]);
-            var color_=rowen_.style.class;
+            var color_=rowen_.getAttribute("class");
           }catch(e){}
           if(color == color_){
             try{
               var rowen_=document.getElementById(array_rowen[i][j-2]);
-              var color_=rowen_.style.class;
+              var color_=rowen_.getAttribute("class");
             }catch(e){}
             if(color == color_){clash_rowen(i,j,"j-")}
           }
         case 4:
           try{
             var rowen_=document.getElementById(array_rowen[i][j+1]);
-            var color_=rowen_.style.class;
+            var color_=rowen_.getAttribute("class");
           }catch(e){}
           if(color == color_){
             try{
               var rowen_=document.getElementById(array_rowen[i][j+2]);
-              var color_=rowen_.style.class;
+              var color_=rowen_.getAttribute("class");
             }catch(e){}
             if(color == color_){clash_rowen(i,j,"j+")}
           }
