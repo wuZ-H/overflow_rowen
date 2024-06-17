@@ -383,8 +383,14 @@ function create_rowen(id,x,y){
   set_posi(id,"calc(82vh - 8vh * "+y+")","calc(50vw - 30vh + 6vh * " + x + ")");
 }
 
-function shift_rowrn(id_a,id_b){
-  
+function shift_rowrn(x_a,y_a,x_b,y_b){
+  shfit_rowen_a=array_rowen[y_a][x_a];
+  shfit_rowen_b=array_rowen[y_b][x_b];
+  array_rowen[y_a][x_a]=shfit_rowen_b;
+  array_rowen[y_b][x_b]=shfit_rowen_a;
+
+  set_posi(array_rowen[y_a][x_a],"calc(82vh - 8vh * "+ y_a +")","calc(50vw - 30vh + 6vh * " + x_a + ")");
+  set_posi(array_rowen[y_b][x_b],"calc(82vh - 8vh * "+ y_b +")","calc(50vw - 30vh + 6vh * " + x_b + ")");
 }
 
 function delete_rowen(id){
