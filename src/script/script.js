@@ -301,7 +301,7 @@ function check_rowen(){
       }
     }
   }
-  resborn_rowen();
+  if(counter_rowen<100){resborn_rowen();}
 }
 
 function clash_rowen(i,j,houkou){
