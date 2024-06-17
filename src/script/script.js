@@ -45,7 +45,7 @@ function born_rowen(){
   if(counter_rowen<100){
     create_rowen("rowen"+counter_rowen,counter_rowen % 10,10);
     drop_rowen();
-    timer_born_rowen=setTimeout(born_rowen,30);
+    timer_born_rowen=setTimeout(born_rowen,50);
   }
   else{
     check_rowen();
@@ -65,6 +65,7 @@ function resborn_rowen(){
   if(counter_rowen<100){
     var y=0;
     var x=0;
+    var id=0;
     while(id !=0){
       y++;
       if(y>9){
@@ -74,9 +75,9 @@ function resborn_rowen(){
       id=array_rowen_c[y][x];
     }
     create_rowen(array_rowen_c[y][x],x,10);
-    array_rowen_c=0;
+    array_rowen_c[y][x]=0;
     drop_rowen();
-    timer_born_rowen=setTimeout(born_rowen,10);
+    timer_born_rowen=setTimeout(born_rowen,25);
   }
   else{
     check_rowen();
