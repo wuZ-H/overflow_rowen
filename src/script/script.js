@@ -25,7 +25,7 @@ function play_click(){
   var btn=document.getElementById("PLAY");
   document.body.removeChild(btn);
   document.body.addEventListener("mousedown",function(event){mousedown_body(event.pageX,event.pageY); return false;});
-  document.body.addEventListener("mouseup", mouseup_body);
+  document.addEventListener("mouseup", mouseup_body);
 
   create_div("box");
   set_size("box","80vh","60vh");
