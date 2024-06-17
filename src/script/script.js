@@ -372,12 +372,13 @@ function create_rowen(id,x,y){
 }
 
 function shift_rowrn(x_a,y_a,x_b,y_b){
-  shfit_rowen[0][0]=y_a;
-  shfit_rowen[0][1]=x_a;
-  shfit_rowen[1][0]=y_b;
-  shfit_rowen[1][1]=x_b;
+  shift_rowen_[0][0]=y_a;
+  shift_rowen_[0][1]=x_a;
+  shift_rowen_[1][0]=y_b;
+  shift_rowen_[1][1]=x_b;
+  var id=array_rowen[y_a][x_a];
   array_rowen[y_a][x_a]=array_rowen[y_b][x_b];
-  array_rowen[y_b][x_b]=shfit_rowen[y_a][x_a];
+  array_rowen[y_b][x_b]=id;
 
   set_posi(array_rowen[y_a][x_a],"calc(82vh - 8vh * "+ y_a +")","calc(50vw - 30vh + 6vh * " + x_a + ")");
   set_posi(array_rowen[y_b][x_b],"calc(82vh - 8vh * "+ y_b +")","calc(50vw - 30vh + 6vh * " + x_b + ")");
